@@ -1,0 +1,37 @@
+{
+  "name": "vib-music-app",
+  "version": "1.0.0",
+  "description": "Visual BI Music App",
+  "main": "index.js",
+  "author": "Mathankumar Chermakani",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --mode development",
+    "prod-build": "webpack --mode production"
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.0.0",
+    "mongoose": "^5.10.11",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "yarn": "^1.22.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
+    "babel-loader": "8.0.0-beta.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^5.0.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^4.5.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.3.2",
+    "webpack-cli": "^4.1.0"
+  }
+}

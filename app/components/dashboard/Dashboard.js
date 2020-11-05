@@ -17,11 +17,11 @@ function dashboard() {
                 </li>
             </ul>
             </nav>
-            <div className="tab-content" id="myTabContent">
+            <div className="tab-content m-2" id="myTabContent">
             <div className="tab-pane fade show active" role="tabpanel" aria-labelledby="nav-home-tab">
             <Router history={history}>
                 <Switch>
-                    <Route path="/playlist" component={Playlist} />
+                    <Route path="/playlist*" component={Playlist} />
                     <Route path="/" component={Songs} />
                 </Switch>
             </Router>

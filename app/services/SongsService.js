@@ -1,6 +1,5 @@
 import axios from 'axios';
 import UserConstants from './../constants/UserConstants';
-import UserService from './UserService'
 
 /**
  * Songs Create
@@ -10,7 +9,7 @@ function create(song) {
 
     return new Promise((resolve, reject) => {
 
-        axios.post('songs/create', song)
+        axios.post('/songs/create', song)
         .then( (response) => {
 
             resolve(response);
@@ -35,7 +34,7 @@ function getAll() {
 
     return new Promise((resolve, reject) => {
 
-        axios.get('songs/getAll')
+        axios.get('/songs/getAll')
         .then( (response) => {
 
             resolve(response.data);
@@ -52,25 +51,6 @@ function getAll() {
     });
 
 }
-
-axios.interceptors.request.use(function (config) {
-    const token = UserService.getToken();
-    if (config.url.startsWith('songs') && token) {
-        config.headers.Authorization =  token;
-    }
-    console.log(config);
-    return config;
-});
-
-axios.interceptors.response.use((response) => {
-    return response;
-}, (error) => {
-    if (error.response.status === 401) {
-        UserService.logout();
-        return;
-    }
-    return Promise.reject(error);
-});
 
 export default {
     create,

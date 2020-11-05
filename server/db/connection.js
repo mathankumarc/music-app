@@ -7,7 +7,7 @@ const config = require(global.appRoot + '/config/' + env + '.config');
 
 const makeConnection = async () => {
     try {
-        await mongoose.connect(`mongodb://${config.mongo.host}:${config.mongo.port}/test`, { useNewUrlParser: true, useUnifiedTopology: true });
+        await mongoose.connect(config.mongo.connectionString, { useNewUrlParser: true, useUnifiedTopology: true });
     }
     catch (error) {
         logger.logError(error);

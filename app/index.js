@@ -7,6 +7,8 @@ import Dashboard from './components/dashboard/Dashboard';
 import PrivateRoute from './components/util/PrivateRoute';
 import RegistrationSuccess from './components/user/registration/RegistrationSuccess';
 import history from './components/util/history';
+import './services/AxiosInterceptor'
+import regeneratorRuntime from "regenerator-runtime";
 import './css/main.css';
 
 function App() {
@@ -18,7 +20,7 @@ function App() {
                         <Router history={history}>
                             <Switch>
                                 <PrivateRoute exact path="/" component={Dashboard} />
-                                <PrivateRoute exact path="/playlist" component={Dashboard} />
+                                <PrivateRoute path="/playlist*" component={Dashboard} />
                                 <Route path="/login" component={UserLogin} />
                                 <Route path="/register/success" component={RegistrationSuccess} />
                                 <Route path="/register" component={UserRegistration} />

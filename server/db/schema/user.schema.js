@@ -38,8 +38,12 @@ userSchema.pre('save', function save(next) {
 });
 
 userSchema.methods.validatePassword = function validatePassword(data) {
-    console.log('in verification');
+
+  /**
+   * @TODO This will block the main thread, do this in a async way.
+   */
     return bcrypt.compareSync(data, this.password);
+
 };
 
 module.exports = userSchema;

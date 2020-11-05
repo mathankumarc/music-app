@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const http = require('http');
 const path = require('path');
 
 const env = process.env.NODE_ENV ? process.env.NODE_ENV : 'local';
@@ -19,10 +18,14 @@ app.use(express.urlencoded({ extended: true }));
 // Parse JSON bodies (as sent by API clients)
 app.use(express.json());
 
+// Include General Routes.
+require('./server/routes/routes')(app);
 // Include User Routes.
 require('./server/routes/user.route')(app);
 //Include Songs Routes
 require('./server/routes/songs.route')(app);
+//Include Playlist Routes
+require('./server/routes/playlist.route')(app);
 
 // Serve the static asset files.
 app.use(express.static(__dirname + '/dist/'));
@@ -31,8 +34,6 @@ app.get('*', (req, res, next) =>{
     res.sendFile(path.join(__dirname + '/dist/index.html'));
 });
 
-const server = http.createServer(app);
-
-server.listen(config.port, () => {
+app.listen(config.port, () => {
     logger.logInfo(`Visual BI music app started on Port:${config.port} in ${env} environment`);
 })

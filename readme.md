@@ -7,7 +7,7 @@
  - Node 14.x
  - Mongo DB 4.4
  - yarn 1.22.10
- - create a config file with name local.config.js(or [NODE_ENV].config.js if am emv set in NODE) under config folder, sample below
+ - create a config file with name local.config.js(or [NODE_ENV].config.js if an emv set in NODE) under config folder, sample below
  ```
  module.exports = {
     ...commonConfig,
@@ -20,7 +20,7 @@
 }
 ```
 
- **Step to Run Application**
+ **Steps to Run Application**
  - Clone the Repo
  - Make sure Prerequisites are fulfilled
  - > yarn
@@ -31,7 +31,7 @@
 
 |API Name | Route | Method | Body | Sample |
 | --- | --- | --- | --- | --- | --- |
-|User Registration | user/register | POST | {firstName, lastName, email, password} | {msg: "Successfully Registerd."} |
+| User Registration | user/register | POST | {firstName, lastName, email, password} | {msg: "Successfully Registerd."} |
 | User Login | user/login | POST | {email, password} | {token: token} |
 | Songs getAll | api/songs/getAll | GET | | [{_id, title, albumn, duration, singers, created, updated}] |
 | Songs Create | api/songs/create | POST | {title, album, duration, singers} | {msg: "Successfully Created."} |

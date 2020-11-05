@@ -7,22 +7,24 @@
  - Node 14.x
  - Mongo DB 4.4
  - yarn 1.22.10
- - create a config file with name local.config.js(or [NODE_ENV].config.js if an emv set in NODE) under config folder, sample below
+ - create a config file with the name local.config.js(or [NODE_ENV].config.js if an evv set in NODE) under config folder, sample below
  ```
  module.exports = {
-    ...commonConfig,
+
     mongo: {
         connectionString: "mongodb://localhost:27017/musicapp"
     },
     jwt: {
         secret: 'adfdsgh456436hghfdhfgd5w546'
-    }
+    },
+    port: 6001
 }
 ```
 
  **Steps to Run Application**
  - Clone the Repo
  - Make sure Prerequisites are fulfilled
+ - Execute following commands from the app folder
  - > yarn
  - > yarn build
  - > node index.js

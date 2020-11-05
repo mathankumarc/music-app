@@ -30,7 +30,7 @@
  **API Documentation**
 
 |API Name | Route | Method | Body | Sample |
-| --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | User Registration | user/register | POST | {firstName, lastName, email, password} | {msg: "Successfully Registerd."} |
 | User Login | user/login | POST | {email, password} | {token: token} |
 | Songs getAll | api/songs/getAll | GET | | [{_id, title, albumn, duration, singers, created, updated}] |
